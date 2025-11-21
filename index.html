@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mi Portafolio</title>
+<style>
+    /* ==== FUENTES ==== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-image: url('TU-IMAGEN-DE-FONDO.jpg');
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(2px);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* ==== ANIMACIÓN GENERAL ==== */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 182, 193, 0.7);
+        backdrop-filter: blur(8px);
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 15px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-100px); }
+        to { transform: translateY(0); }
+    }
+
+    .nav a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .nav a:hover {
+        color: #ffeff7;
+        transform: scale(1.1);
+    }
+
+    /* SECCIONES GENERALES */
+    section {
+        width: 80%;
+        margin: 120px auto;
+        background: rgba(255,255,255,0.45);
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        animation: sectionFade 1.4s ease;
+    }
+
+    @keyframes sectionFade {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        font-family: 'Sacramento', cursive;
+        font-size: 48px;
+        color: #ff6fa8;
+        text-align: center;
+    }
+
+    /* SECCIÓN SOBRE MÍ */
+    .sobre-mi-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 4px solid #ffb6c1;
+        display: block;
+        margin: 0 auto 20px auto;
+        animation: popIn 1s ease;
+    }
+
+    @keyframes popIn {
+        0% { transform: scale(0); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* TARJETAS DE PROYECTOS */
+    .proyectos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .proyecto-card {
+        background: rgba(255, 240, 245, 0.7);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .proyecto-card:hover {
+        transform: scale(1.05);
+        background: rgba(255, 182, 193, 0.8);
+    }
+
+    /* HABILIDADES */
+    .skill-bar {
+        margin: 15px 0;
+    }
+
+    .skill-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .bar {
+        width: 100%;
+        height: 15px;
+        background: #ffe4ec;
+        border-radius: 10px;
+    }
+
+    .level {
+        height: 100%;
+        background: #ff6fa8;
+        border-radius: 10px;
+        width: 0%;
+        animation: grow 2s forwards;
+    }
+
+    @keyframes grow {
+        from { width: 0%; }
+        to { width: var(--valor); }
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#habilidades">Habilidades</a>
+</div>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+    <img src="TU-FOTO.jpg" alt="Mi foto" class="sobre-mi-img">
+    <h2>Sobre mí</h2>
+    <p>Aquí va tu descripción personal ✨</p>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="proyectos-grid">
+        <div class="proyecto-card">Proyecto 1</div>
+        <div class="proyecto-card">Proyecto 2</div>
+        <div class="proyecto-card">Proyecto 3</div>
+    </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+    <h2>Habilidades</h2>
+
+    <div class="skill-bar">
+        <div class="skill-name">HTML</div>
+        <div class="bar"><div class="level" style="--valor: 90%;"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-name">CSS</div>
+        <div class="bar"><div class="level" style="--valor: 80%;"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <div class="skill-name">JavaScript</div>
+        <div class="bar"><div class="level" style="--valor: 60%;"></div></div>
+    </div>
+
+</section>
+
+</body>
+</html>
