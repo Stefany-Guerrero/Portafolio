@@ -1,0 +1,139 @@
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(#0e1b29, #0a1622);
+  color: white;
+}
+
+/* ===========================
+   HEADER / NAVBAR
+=========================== */
+header {
+  background: linear-gradient(90deg, #0d47a1, #00695c);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
+}
+
+.nav-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   ESPACIADO ENTRE SECCIONES
+=========================== */
+section {
+  padding: 160px 60px;
+  margin-top: 180px;
+}
+
+/* ===========================
+   SEPARADORES DECORATIVOS
+=========================== */
+.divider {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  margin: 40px 0;
+  border-radius: 10px;
+}
+
+/* ===========================
+   HERO / INICIO
+=========================== */
+#hero {
+  background-image: url('../imagenes/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+/* ===========================
+   SOBRE MI
+=========================== */
+#sobre-mi {
+  background: rgba(20, 35, 50, 0.92);
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+  padding: 50px;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.35);
+  color: #d7ecff;
+}
+
+/* ===========================
+   PROYECTOS
+=========================== */
+#proyectos {
+  background: linear-gradient(#1a2f3b, #12323d);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.35);
+  color: #d6fff4;
+}
+
+/* Vista previa de proyectos */
+.proyecto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.proyecto-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.proyecto-item:hover {
+  transform: scale(1.03);
+}
+
+.proyecto-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.proyecto-info {
+  padding: 15px;
+  color: black;
+}
+
+/* ===========================
+   HABILIDADES
+=========================== */
+#habilidades {
+  background: rgba(18, 28, 42, 0.95);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px;
+  box-shadow: 0 0 25px rgba(0, 180, 255, 0.35);
+  color: #e0f2ff;
+}
