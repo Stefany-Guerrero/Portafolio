@@ -63,18 +63,10 @@
       gap: 12px;
     }
 
-    .flecha {
-      font-size: 20px;
-      transition: transform 0.3s ease;
-    }
-    .flecha.abierto {
-      transform: rotate(90deg);
-    }
+    .flecha { font-size: 20px; transition: transform 0.3s ease; }
+    .flecha.abierto { transform: rotate(90deg); }
 
-    .contenido {
-      display: none;
-      padding: 15px 0;
-    }
+    .contenido { display: none; padding: 15px 0; }
 
     .lista {
       list-style: none;
@@ -119,7 +111,7 @@
     </div>
     <div id="quices" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/quiz1/Ejercicio Práctico 1.pdf" target="_blank">Quiz 1</a></li>
+        <li><a href="proyectos/quiz1/Ejercicio%20Práctico%201.pdf" target="_blank">Quiz 1</a></li>
       </ul>
     </div>
 
@@ -129,8 +121,8 @@
     </div>
     <div id="parciales" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/parciales/Parcial 1" target="_blank">Parcial 1</a></li>
-        <li><a href="proyectos/parciales/Parcial 2.zip" download>Parcial 2</a></li>
+        <li><a href="proyectos/parciales/Parcial%201.zip" download>Parcial 1</a></li>
+        <li><a href="proyectos/parciales/Parcial%202.zip" download>Parcial 2</a></li>
       </ul>
     </div>
 
@@ -140,8 +132,8 @@
     </div>
     <div id="investigaciones" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/investigaciones/Investigación 1 de Programación I.pdf" target="_blank">Investigación 1</a></li>
-        <li><a href="proyectos/investigaciones/Investigación 2, Programación.pdf" target="_blank">Investigación 2</a></li>
+        <li><a href="proyectos/investigaciones/Investigación%201%20de%20Programación%20I.pdf" target="_blank">Investigación 1</a></li>
+        <li><a href="proyectos/investigaciones/Investigación%202,%20Programación.pdf" target="_blank">Investigación 2</a></li>
       </ul>
     </div>
 
@@ -151,8 +143,19 @@
     </div>
     <div id="labs" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/laboratorios/Laboratorio 1, Programaciono I.pdf" target="_blank">Laboratorio 1</a></li>
-        <li><a href="proyectos/laboratorios/Laboratorio Práctica 2, programación I 5.pdf" target="_blank">Laboratorio 2</a></li>
+        <li><a href="proyectos/laboratorios/Laboratorio%201,%20Programaciono%20I.pdf" target="_blank">Laboratorio 1</a></li>
+        <li><a href="proyectos/laboratorios/Laboratorio%20Práctica%202,%20programación%20I%205.pdf" target="_blank">Laboratorio 2</a></li>
+      </ul>
+    </div>
+
+    <!-- TALLERES (NUEVO) -->
+    <div class="categoria" onclick="toggle('talleres', this)">
+      <span class="flecha">▶</span> Talleres
+    </div>
+    <div id="talleres" class="contenido">
+      <ul class="lista">
+        <li><a href="proyectos/talleres/Taller%20Practico%201.pdf" target="_blank">Taller 1</a></li>
+        <li><a href="proyectos/talleres/Taller%20practico%203.pdf" target="_blank">Taller 2</a></li>
       </ul>
     </div>
 
@@ -164,20 +167,16 @@ function toggle(id, elemento) {
   const el = document.getElementById(id);
   const flecha = elemento.querySelector(".flecha");
 
-  // Oculta todo excepto el que toca
   document.querySelectorAll(".contenido").forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
 
   document.querySelectorAll(".flecha").forEach(f => f.classList.remove("abierto"));
 
-  // Alterna visibilidad
   el.style.display = (el.style.display === "block") ? "none" : "block";
 
-  // Flecha
   flecha.classList.toggle("abierto");
 
-  // Scroll hasta mostrar archivos
   setTimeout(() => {
     const offset = el.offsetTop - 120;
     window.scrollTo({ top: offset, behavior: "smooth" });
@@ -187,6 +186,8 @@ function toggle(id, elemento) {
 
 </body>
 </html>
+
+
 
 
 
