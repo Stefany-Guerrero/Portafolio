@@ -10,7 +10,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       scroll-behavior: smooth;
-      background: #0D1224; 
+      background: #0D1224;
       color: white;
     }
 
@@ -48,25 +48,23 @@
       text-shadow: 0 0 10px #72A3ED;
     }
 
-    /* SECCIONES GENERALES */
+    /* SECCIONES */
     section {
-      padding: 120px 60px;
+      padding: 100px 60px;
       display: flex;
       justify-content: center;
     }
 
-    /* TARJETAS */
     .card {
       background: white;
       color: #1A2E49;
-      padding: 60px 50px;
+      padding: 50px;
       max-width: 1000px;
       border-radius: 20px;
       border: 3px solid #72A3ED;
       box-shadow: 0 0 30px rgba(114,163,237,0.35);
     }
 
-    /* PORTADA (INICIO) */
     #hero .card {
       background: #72A3ED;
       color: white;
@@ -81,7 +79,7 @@
       background: #72A3ED;
       color: white;
       padding: 18px;
-      margin-top: 20px;
+      margin-top: 15px;
       border-radius: 12px;
       cursor: pointer;
       text-align: center;
@@ -97,7 +95,7 @@
     /* CONTENIDO DESPLEGABLE */
     .contenido {
       display: none;
-      padding: 20px 0;
+      padding: 15px 0;
       animation: fade 0.5s;
     }
 
@@ -106,19 +104,18 @@
       to {opacity: 1;}
     }
 
-    /* GRID ARCHIVOS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      gap: 20px;
+      margin-top: 15px;
     }
 
     .card-item {
       background: white;
       color: #1A2E49;
       border-radius: 15px;
-      padding: 20px;
+      padding: 18px;
       border: 3px solid #72A3ED;
       box-shadow: 0 0 20px rgba(114,163,237,0.25);
       transition: 0.3s ease;
@@ -127,7 +124,6 @@
 
     .card-item:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(114,163,237,0.45);
       border-color: #3C6BC9;
       cursor: pointer;
     }
@@ -171,20 +167,21 @@
     </div>
   </section>
 
-  <!-- PROYECTOS (CATEGORÍAS) -->
+  <!-- PROYECTOS -->
   <section id="proyectos">
     <div class="card">
       <h2>Mis Trabajos Académicos</h2>
       <p>Haz clic en una categoría para explorar los trabajos.</p>
 
-      <div class="categoria" onclick="toggle('quices')">Quices</div>
+      <!-- QUIZ (SOLO 1) -->
+      <div class="categoria" onclick="toggle('quices')">Quiz</div>
       <div id="quices" class="contenido">
         <div class="card-grid">
           <div class="card-item"><a href="#" download>Quiz 1</a></div>
-          <div class="card-item"><a href="#" download>Quiz 2</a></div>
         </div>
       </div>
 
+      <!-- PARCIALES -->
       <div class="categoria" onclick="toggle('parciales')">Parciales</div>
       <div id="parciales" class="contenido">
         <div class="card-grid">
@@ -193,6 +190,7 @@
         </div>
       </div>
 
+      <!-- INVESTIGACIONES -->
       <div class="categoria" onclick="toggle('investigaciones')">Investigaciones</div>
       <div id="investigaciones" class="contenido">
         <div class="card-grid">
@@ -201,6 +199,7 @@
         </div>
       </div>
 
+      <!-- LABORATORIOS -->
       <div class="categoria" onclick="toggle('labs')">Laboratorios</div>
       <div id="labs" class="contenido">
         <div class="card-grid">
@@ -209,6 +208,7 @@
         </div>
       </div>
 
+      <!-- TALLERES -->
       <div class="categoria" onclick="toggle('talleres')">Talleres</div>
       <div id="talleres" class="contenido">
         <div class="card-grid">
@@ -217,6 +217,7 @@
         </div>
       </div>
 
+      <!-- EJERCICIO PRÁCTICO -->
       <div class="categoria" onclick="toggle('practico')">Ejercicio Práctico</div>
       <div id="practico" class="contenido">
         <div class="card-grid">
@@ -235,27 +236,28 @@
     </div>
   </section>
 
-  <!-- SCRIPT DE DESPLIEGUE AUTOMÁTICO -->
   <script>
     function toggle(id) {
       const el = document.getElementById(id);
 
-      // Ocultar si ya está visible
+      // Si ya está visible, ocultar
       if (el.style.display === "block") {
         el.style.display = "none";
         return;
       }
 
-      // Mostrar
+      // Mostrar la sección
       el.style.display = "block";
 
-      // Bajar automáticamente a la sección
+      // Bajar automáticamente justo al contenido
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   </script>
 
 </body>
 </html>
+
+
 
 
 
