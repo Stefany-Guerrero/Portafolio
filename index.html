@@ -48,7 +48,7 @@
       text-shadow: 0 0 10px #72A3ED;
     }
 
-    /* ESTRUCTURA DE SECCIONES */
+    /* SECCIONES GENERALES */
     section {
       padding: 120px 60px;
       margin-top: 120px;
@@ -56,7 +56,7 @@
       justify-content: center;
     }
 
-    /* TARJETAS GENERALES */
+    /* TARJETAS */
     .card {
       background: white;
       color: #1A2E49;
@@ -67,21 +67,25 @@
       box-shadow: 0 0 30px rgba(114,163,237,0.35);
     }
 
-    /* HERO ESPECIAL */
+    /* PORTADA (INICIO) */
     #hero .card {
       background: #72A3ED;
       color: white;
     }
 
-    /* GRID TARJETAS */
+    /* TÍTULOS CENTRADOS */
+    h1, h2, h3, h4 {
+      text-align: center;
+    }
+
+    /* GRILLA DE TARJETAS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
-    /* TARJETA INDIVIDUAL */
     .card-item {
       background: white;
       color: #1A2E49;
@@ -100,18 +104,49 @@
       cursor: pointer;
     }
 
-    h1, h2, h3, h4 {
-      text-align: center;
+    .card-item a {
+      color: inherit;
+      font-weight: bold;
+      text-decoration: none;
     }
 
+    /* ACORDEÓN */
+    .categoria {
+      background: #72A3ED;
+      color: white;
+      padding: 18px;
+      margin-top: 35px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 20px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(114,163,237,0.4);
+    }
+
+    .categoria:hover {
+      background: #3C6BC9;
+    }
+
+    .contenido {
+      display: none;
+      padding: 20px 0;
+      animation: fade 0.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- ====================== HEADER ====================== -->
+  <!-- HEADER -->
   <header>
     <img src="imagenes/perfil.jpg" alt="Foto de perfil" />
+
     <nav class="nav-links">
       <a href="#hero">Inicio</a>
       <a href="#sobre-mi">Sobre mí</a>
@@ -120,7 +155,7 @@
     </nav>
   </header>
 
-  <!-- ====================== HERO ====================== -->
+  <!-- HERO -->
   <section id="hero">
     <div class="card">
       <h1>Bienvenida a mi Portafolio</h1>
@@ -128,7 +163,7 @@
     </div>
   </section>
 
-  <!-- ====================== SOBRE MI ====================== -->
+  <!-- SOBRE MI -->
   <section id="sobre-mi">
     <div class="card">
       <h2>Sobre mí</h2>
@@ -136,131 +171,64 @@
     </div>
   </section>
 
-  <!-- ====================== PROYECTOS ====================== -->
+  <!-- PROYECTOS (ACORDEÓN) -->
   <section id="proyectos">
     <div class="card">
       <h2>Mis Trabajos Académicos</h2>
-      <p>Estos son los trabajos realizados durante mis cursos universitarios.</p>
-    </div>
-  </section>
+      <p>Haz clic en una categoría para explorar los trabajos.</p>
 
-
-  <!-- ====================== QUICES ====================== -->
-  <section>
-    <div class="card">
-      <h3>📘 Quices</h3>
-      <div class="card-grid">
-
-        <div class="card-item">
-          <h4>Quiz 1</h4>
-          <p>Descripción del primer quiz.</p>
+      <!-- CATEGORÍAS -->
+      <div class="categoria" onclick="toggle('quices')">📘 Quices</div>
+      <div id="quices" class="contenido">
+        <div class="card-grid">
+          <div class="card-item"><a href="#" download>Quiz 1</a></div>
+          <div class="card-item"><a href="#" download>Quiz 2</a></div>
         </div>
-
-        <div class="card-item">
-          <h4>Quiz 2</h4>
-          <p>Descripción del segundo quiz.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ====================== PARCIALES ====================== -->
-  <section>
-    <div class="card">
-      <h3>📕 Parciales</h3>
-      <div class="card-grid">
-
-        <div class="card-item">
-          <h4>Parcial 1</h4>
-          <p>Descripción del parcial.</p>
+      <div class="categoria" onclick="toggle('parciales')">📕 Parciales</div>
+      <div id="parciales" class="contenido">
+        <div class="card-grid">
+          <div class="card-item"><a href="#" download>Parcial 1</a></div>
+          <div class="card-item"><a href="#" download>Parcial 2</a></div>
         </div>
-
-        <div class="card-item">
-          <h4>Parcial 2</h4>
-          <p>Descripción del parcial.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ====================== INVESTIGACIONES ====================== -->
-  <section>
-    <div class="card">
-      <h3>📎 Investigaciones</h3>
-      <div class="card-grid">
-
-        <div class="card-item">
-          <h4>Investigación 1</h4>
-          <p>Descripción breve.</p>
+      <div class="categoria" onclick="toggle('investigaciones')">📎 Investigaciones</div>
+      <div id="investigaciones" class="contenido">
+        <div class="card-grid">
+          <div class="card-item"><a href="#" download>Investigación 1</a></div>
+          <div class="card-item"><a href="#" download>Investigación 2</a></div>
         </div>
-
-        <div class="card-item">
-          <h4>Investigación 2</h4>
-          <p>Descripción breve.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ====================== LABORATORIOS ====================== -->
-  <section>
-    <div class="card">
-      <h3>🧪 Laboratorios</h3>
-      <div class="card-grid">
-
-        <div class="card-item">
-          <h4>Laboratorio 1</h4>
-          <p>Descripción.</p>
+      <div class="categoria" onclick="toggle('labs')">🧪 Laboratorios</div>
+      <div id="labs" class="contenido">
+        <div class="card-grid">
+          <div class="card-item"><a href="#" download>Laboratorio 1</a></div>
+          <div class="card-item"><a href="#" download>Laboratorio 2</a></div>
         </div>
-
-        <div class="card-item">
-          <h4>Laboratorio 2</h4>
-          <p>Descripción.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ====================== TALLERES ====================== -->
-  <section>
-    <div class="card">
-      <h3>🔧 Talleres</h3>
-      <div class="card-grid">
-
-        <div class="card-item">
-          <h4>Taller 1</h4>
-          <p>Descripción.</p>
+      <div class="categoria" onclick="toggle('talleres')">🔧 Talleres</div>
+      <div id="talleres" class="contenido">
+        <div class="card-grid">
+          <div class="card-item"><a href="#" download>Taller 1</a></div>
+          <div class="card-item"><a href="#" download>Taller 2</a></div>
         </div>
-
-        <div class="card-item">
-          <h4>Taller 2</h4>
-          <p>Descripción.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ====================== EJERCICIO PRÁCTICO ====================== -->
-  <section>
-    <div class="card">
-      <h3>🧠 Ejercicio Práctico</h3>
-      <div class="card-grid">
-
-        <div class="card-item">
-          <h4>Ejercicio Único</h4>
-          <p>Descripción del trabajo práctico.</p>
+      <div class="categoria" onclick="toggle('practico')">🧠 Ejercicio Práctico</div>
+      <div id="practico" class="contenido">
+        <div class="card-grid">
+          <div class="card-item"><a href="#" download>Ejercicio Único</a></div>
         </div>
-
       </div>
+
     </div>
   </section>
 
-  <!-- ====================== HABILIDADES ====================== -->
+  <!-- HABILIDADES -->
   <section id="habilidades">
     <div class="card">
       <h2>Habilidades</h2>
@@ -268,8 +236,17 @@
     </div>
   </section>
 
+  <!-- SCRIPT ACORDEÓN -->
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
 </body>
 </html>
+
 
 
 
