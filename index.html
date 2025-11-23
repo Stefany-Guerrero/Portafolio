@@ -70,7 +70,7 @@
       text-align: center;
     }
 
-    /* CATEGORÍAS */
+    /* CATEGORIAS SIN FLECHA */
     .categoria {
       background: #72A3ED;
       color: white;
@@ -85,10 +85,10 @@
       gap: 12px;
     }
 
-    .flecha { font-size: 20px; transition: transform 0.3s ease; }
-    .flecha.abierto { transform: rotate(90deg); }
-
-    .contenido { display: none; padding: 15px 0; }
+    .contenido { 
+      display: none; 
+      padding: 15px 0; 
+    }
 
     .lista {
       list-style: none;
@@ -198,20 +198,14 @@
   <div class="card">
     <h2>Mis Trabajos Académicos</h2>
 
-    <!-- QUIZ -->
-    <div class="categoria" onclick="toggle('quices', this)">
-      <span class="flecha">▶</span> Quiz
-    </div>
+    <div class="categoria" onclick="toggle('quices', this)">Quiz</div>
     <div id="quices" class="contenido">
       <ul class="lista">
         <li><a href="proyectos/quiz1/Ejercicio%20Práctico%201.pdf" target="_blank">Quiz 1</a></li>
       </ul>
     </div>
 
-    <!-- PARCIALES -->
-    <div class="categoria" onclick="toggle('parciales', this)">
-      <span class="flecha">▶</span> Parciales
-    </div>
+    <div class="categoria" onclick="toggle('parciales', this)">Parciales</div>
     <div id="parciales" class="contenido">
       <ul class="lista">
         <li><a href="proyectos/parciales/Parcial%201.zip" download>Parcial 1</a></li>
@@ -219,10 +213,7 @@
       </ul>
     </div>
 
-    <!-- INVESTIGACIONES -->
-    <div class="categoria" onclick="toggle('investigaciones', this)">
-      <span class="flecha">▶</span> Investigaciones
-    </div>
+    <div class="categoria" onclick="toggle('investigaciones', this)">Investigaciones</div>
     <div id="investigaciones" class="contenido">
       <ul class="lista">
         <li><a href="proyectos/investigaciones/Investigación%201%20de%20Programación%20I.pdf" target="_blank">Investigación 1</a></li>
@@ -230,10 +221,7 @@
       </ul>
     </div>
 
-    <!-- LABS -->
-    <div class="categoria" onclick="toggle('labs', this)">
-      <span class="flecha">▶</span> Laboratorios
-    </div>
+    <div class="categoria" onclick="toggle('labs', this)">Laboratorios</div>
     <div id="labs" class="contenido">
       <ul class="lista">
         <li><a href="proyectos/laboratorios/Laboratorio%201,%20Programaciono%20I.pdf" target="_blank">Laboratorio 1</a></li>
@@ -241,10 +229,7 @@
       </ul>
     </div>
 
-    <!-- TALLERES -->
-    <div class="categoria" onclick="toggle('talleres', this)">
-      <span class="flecha">▶</span> Talleres
-    </div>
+    <div class="categoria" onclick="toggle('talleres', this)">Talleres</div>
     <div id="talleres" class="contenido">
       <ul class="lista">
         <li><a href="proyectos/talleres/Taller%20Practico%201.pdf" target="_blank">Taller 1</a></li>
@@ -314,29 +299,23 @@
 </section>
 
 <script>
-function toggle(id, elemento) {
+function toggle(id) {
   const el = document.getElementById(id);
-  const flecha = elemento.querySelector(".flecha");
 
+  // Cerrar los demás
   document.querySelectorAll(".contenido").forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
 
-  document.querySelectorAll(".flecha").forEach(f => f.classList.remove("abierto"));
-
+  // Abrir/cerrar el seleccionado
   el.style.display = (el.style.display === "block") ? "none" : "block";
-
-  flecha.classList.toggle("abierto");
-
-  setTimeout(() => {
-    const offset = el.offsetTop - 120;
-    window.scrollTo({ top: offset, behavior: "smooth" });
-  }, 150);
 }
 </script>
 
 </body>
 </html>
+
+
 
 
 
